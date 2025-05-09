@@ -19,7 +19,7 @@ public class Entity
 
     public float scale = 1;
     public float rotation = 0;
-    public int layer = 0;
+    public int layer = 1;
 
     // Coordinate Stuff
     public Vector2 position;
@@ -41,21 +41,19 @@ public class Entity
     }
 
     // Render, this is run every frame and draws the texture, with the sprite drawn in the center, not in the corner.
-    public void Render(SpriteBatch spriteBatch) {
+    public virtual void Render(SpriteBatch spriteBatch) {
         if (shouldRender) {
-            // calculate x and y so that the sprite is at the center of the screen
-            // TODO: Add rotation support
-            float finalX = texture.Width / 2 + position.X;
-            float finalY = texture.Height / 2 + position.Y;
             // render onto the screen
             spriteBatch.Draw(texture, position, null, Color.White, rotation, new Vector2(texture.Height / 2, texture.Width / 2), scale, SpriteEffects.None, layer);
         }
     }
 
     // constructor
-    public Entity(Texture2D setTexture, Vector2 setPosition) {
+    public Entity(Texture2D setTexture, Vector2 setPosition, float setRotation=0, float setScale=1) {
         texture = setTexture;
         position = setPosition;
+        rotation = setRotation;
+        scale = setScale;
 
         // Run init
         Init();

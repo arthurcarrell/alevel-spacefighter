@@ -26,3 +26,4 @@
 /home/arthur/alevel-spacefighter/bin/Debug/net8.0/Content/alex.xnb
 /home/arthur/alevel-spacefighter/bin/Debug/net8.0/Content/ship.xnb
 /home/arthur/alevel-spacefighter/obj/Debug/net8.0/alevel-spacefighter.sourcelink.json
+/home/arthur/alevel-spacefighter/bin/Debug/net8.0/Content/pixel.xnb

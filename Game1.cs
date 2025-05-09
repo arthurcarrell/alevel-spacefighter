@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -27,18 +29,14 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-
-    Texture2D testTexture;
     Entity testEntity;
-
-    /* Every single entity created needs to be added to this list, this list is responsible
-    for making the entity render, and it calls each entities Update() and Render() function. */
-    public List<Entity> entities = new List<Entity>();
-
-
+    public static Texture2D shipTexture;
+    public static Texture2D laserTexture;
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = 1080;
+        _graphics.PreferredBackBufferHeight = 720;
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -46,18 +44,28 @@ public class Game1 : Game
     protected override void Initialize()
     {
         // TODO: Add your initialization logic here
-
+        
         base.Initialize();
+        
     }
 
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        testTexture = Content.Load<Texture2D>("ship");
+        shipTexture = Content.Load<Texture2D>("ship");
+        laserTexture = Content.Load<Texture2D>("pixel");
+
 
         // TODO: use this.Content to load your game content here
-        testEntity = new Ship(testTexture, new Vector2(0,0));
-        entities.Add(testEntity);
+        Random rnd = new Random();
+        for (int i=0; i < 30; i++) {
+            Ship testEntity2 = new Ship(shipTexture, new Vector2(rnd.Next(300),rnd.Next(700)), laserTexture, 20, 1);
+            EntityManager.entities.Add(testEntity2);
+        }
+        for (int i=0; i < 30; i++) {
+            Ship testEntity2 = new Ship(shipTexture, new Vector2(rnd.Next(500)+600,rnd.Next(700)), laserTexture, 20, 2);
+            EntityManager.entities.Add(testEntity2);
+        }
     }
 
     protected override void Update(GameTime gameTime)
@@ -72,13 +80,15 @@ public class Game1 : Game
     }
 
     protected void DrawEntities(SpriteBatch spriteBatch) {
-        foreach (Entity entity in entities) {
+        List<Entity> tempEntities = new List<Entity>(EntityManager.entities); // prevents modification during foreach loop which leads to a crash
+        foreach (Entity entity in tempEntities) {
             entity.Render(spriteBatch);
         }
     }
 
     protected void UpdateEntities(GameTime gameTime) {
-        foreach (Entity entity in entities) {
+        List<Entity> tempEntities = new List<Entity>(EntityManager.entities); // prevents modification during foreach loop which leads to a crash
+        foreach (Entity entity in tempEntities) {
             entity.Update(gameTime);
         }
     }

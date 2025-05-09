@@ -6,8 +6,10 @@
   <SourceFiles>
     <File>/home/arthur/alevel-spacefighter/Content/alex.png</File>
     <File>/home/arthur/alevel-spacefighter/Content/ship.png</File>
+    <File>/home/arthur/alevel-spacefighter/Content/pixel.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

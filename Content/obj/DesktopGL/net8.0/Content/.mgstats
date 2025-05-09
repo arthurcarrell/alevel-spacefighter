@@ -1,3 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "/home/arthur/alevel-spacefighter/Content/alex.png","/home/arthur/alevel-spacefighter/Content/bin/DesktopGL/Content/alex.xnb","TextureProcessor","Texture2DContent",7965881,28607317,0.7325937
+"/home/arthur/alevel-spacefighter/Content/pixel.png","/home/arthur/alevel-spacefighter/Content/bin/DesktopGL/Content/pixel.xnb","TextureProcessor","Texture2DContent",83,89,0.1095918
 "/home/arthur/alevel-spacefighter/Content/ship.png","/home/arthur/alevel-spacefighter/Content/bin/DesktopGL/Content/ship.xnb","TextureProcessor","Texture2DContent",147,1109,0.0951019
