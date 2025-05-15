@@ -31,7 +31,7 @@ public class CollisionEntity : Entity
             }
         }
     }
-    public override void Update(GameTime gameTime)
+    public override void Update(GameTime gameTime) // does hide Update() from entity, but that doesnt do anything so thats fine.
     {
         // run hitbox update
         if (isHitboxEnabled) { HitboxUpdate(gameTime); }

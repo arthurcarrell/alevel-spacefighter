@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("alevel-spacefighter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cf238a18c01a157876915bc5776b21ba61349b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb79f19d33508670aa3f222040c358aaff0e6ba4")]
 [assembly: System.Reflection.AssemblyProductAttribute("alevel-spacefighter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("alevel-spacefighter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

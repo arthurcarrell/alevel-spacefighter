@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace alevel_spacefighter;
 
-public class Entity
+public abstract class Entity
 {
     /*
     This class isn't designed to be used by itself, instead, it's designed to be inherited and exists as a base for all objects in the game.

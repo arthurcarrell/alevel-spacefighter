@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace alevel_spacefighter;
 
-public class Ship : CollisionEntity
+public class Ship : PhysicsEntity
 {
 
     
@@ -98,11 +98,11 @@ public class Ship : CollisionEntity
 
             /* Movement */
             if (distance >= engageDistance) {
-                position += Vec2Forward(finalMoveSpeed);
+                Accelerate(rotation, finalMoveSpeed/2);
             }
         }
         
-
+        PhysicsStep();
         base.Update(gameTime);
     }
 

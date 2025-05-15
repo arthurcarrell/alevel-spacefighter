@@ -1,0 +1,5 @@
+Two ships approaching each other: engaged on each other.
+
+Threshold - some distance that they have a change to chicken out. 
+When in the distance, there is an X% chance that they arbitrarilty change course, and disengages (has no target)
+This should create interesting "dogfight" behaviour.

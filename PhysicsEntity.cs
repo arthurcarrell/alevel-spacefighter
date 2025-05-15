@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
@@ -19,10 +20,28 @@ public class PhysicsEntity : CollisionEntity
     {
     }
 
-
+    protected void Accelerate(float direction, float amount=ACCELERATION_SPEED) {
+        currentVelocity += Vec2Forward(direction,amount);
+    }
     protected virtual void PhysicsStep() {
         // code physics stuff here
+
+        // move based on currentVelocity
+        position.X += currentVelocity.X * FRICTION;
+        position.Y += currentVelocity.Y * FRICTION;
+
+        // reduce currentVelocity
+        currentVelocity.X -= FRICTION;
+        currentVelocity.Y -= FRICTION;
+
     }
 
+    private Vector2 Vec2Forward(float rotation, float amount) {
+        Vector2 final = new Vector2();
 
+        final.X = (float)Math.Cos(rotation) * amount;
+        final.Y = (float)Math.Sin(rotation) * amount;
+
+        return final;
+    }
 }
